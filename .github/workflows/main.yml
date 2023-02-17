@@ -61,13 +61,13 @@ jobs:
     - name: Run the Docker container
       run: |
         docker run \
-          -e GPG_PASSPHRASE=${{ secrets.GPG_PASSPHRASE }} \
-          -e GOOGLE_SHEETS_CREDENTIALS_B64=${{ secrets.GOOGLE_SHEETS_CREDENTIALS_B64 }} \
-          -e GOOGLE_SHEETS_TOKEN_B64=${{ secrets.GOOGLE_SHEETS_TOKEN_B64 }} \
-          -e GOOGLE_SHEETS_SHEET_ID=${{ secrets.GOOGLE_SHEETS_SHEET_ID }} \
-          -e GOOGLE_SHEETS_TAB_NAME=${{ secrets.GOOGLE_SHEETS_TAB_NAME }} \
-          -e TELEGRAM_API_TOKEN=${{ secrets.TELEGRAM_API_TOKEN }} \
-          -e TELEGRAM_USERID=${{ secrets.TELEGRAM_USERID }} \
-          -e USER=${{ steps.sets-secrets.outputs.secret-user }} \
-          -e PASS=${{ steps.sets-secrets.outputs.secret-pass }} \
+          -e "GPG_PASSPHRASE=${{ secrets.GPG_PASSPHRASE }}" \
+          -e "GOOGLE_SHEETS_CREDENTIALS_B64=${{ secrets.GOOGLE_SHEETS_CREDENTIALS_B64 }}" \
+          -e "GOOGLE_SHEETS_TOKEN_B64=${{ secrets.GOOGLE_SHEETS_TOKEN_B64 }}" \
+          -e "GOOGLE_SHEETS_SHEET_ID=${{ secrets.GOOGLE_SHEETS_SHEET_ID }}" \
+          -e "GOOGLE_SHEETS_TAB_NAME=${{ secrets.GOOGLE_SHEETS_TAB_NAME }}" \
+          -e "TELEGRAM_API_TOKEN=${{ secrets.TELEGRAM_API_TOKEN }}" \
+          -e "TELEGRAM_USERID=${{ secrets.TELEGRAM_USERID }}" \
+          -e "USER=${{ steps.sets-secrets.outputs.secret-user }}" \
+          -e "PASS=${{ steps.sets-secrets.outputs.secret-pass }}" \
         "${{ secrets.CONTAINER_IMAGE }}"
